@@ -4,16 +4,14 @@ import Navbar from './components/Navbar';
 import BookList from './components/BookList';
 import BookForm from './components/BookForm';
 
-const App = () => {
-  return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<BookList />} />
-        <Route path="/categories" element={<BookForm />} />
-      </Routes>
-    </BrowserRouter>
-  );
-};
+const App = () => (
+  <BrowserRouter>
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<BookList />} />
+      <Route path="/categories" element={<BookForm />} />
+    </Routes>
+  </BrowserRouter>
+);
 
 export default App;
