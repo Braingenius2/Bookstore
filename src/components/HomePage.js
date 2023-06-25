@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BookList from './BookList';
 import BookForm from './BookForm';
 
 const HomePage = () => {
-  // Dummy book data for testing
-  const books = [
+  const [books, setBooks] = useState([
     {
       id: 1,
       category: 'Action',
@@ -29,22 +28,20 @@ const HomePage = () => {
       progress: '0%',
       chapter: 'Introduction',
     },
-  ];
+  ]);
 
   const handleAddBook = (newBook) => {
-    // Implement logic to add a new book to the book list
-    // You can update the 'books' state or make an API request here
+    setBooks((prevBooks) => [...prevBooks, newBook]);
   };
 
   const handleDeleteBook = (bookId) => {
-    // Implement logic to delete a book from the book list
-    // You can update the 'books' state or make an API request here
+    setBooks((prevBooks) => prevBooks.filter((book) => book.id !== bookId));
   };
 
   return (
     <div className="container">
       <BookList books={books} onDelete={handleDeleteBook} />
-      <div className="horizontal-divider" />
+      <div className="horizontal-divider"></div>
       <section>
         <h2 className="form-title">ADD NEW BOOK</h2>
         <BookForm onAdd={handleAddBook} />
