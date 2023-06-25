@@ -41,7 +41,7 @@ const HomePage = () => {
   return (
     <div className="container">
       <BookList books={books} onDelete={handleDeleteBook} />
-      <div className="horizontal-divider"></div>
+      <div className="horizontal-divider" />
       <section>
         <h2 className="form-title">ADD NEW BOOK</h2>
         <BookForm onAdd={handleAddBook} />
