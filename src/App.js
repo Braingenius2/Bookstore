@@ -4,7 +4,6 @@ import HomePage from './components/Homepage';
 import CategoriesPage from './components/CategoriesPage';
 import Navbar from './components/Navbar';
 
-
 const App = () => (
   <BrowserRouter>
     <Navbar />
