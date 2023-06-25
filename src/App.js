@@ -1,15 +1,16 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './components/Homepage';
+import CategoriesPage from './components/CategoriesPage';
 import Navbar from './components/Navbar';
-import BookList from './components/BookList';
-import BookForm from './components/BookForm';
+
 
 const App = () => (
   <BrowserRouter>
     <Navbar />
     <Routes>
-      <Route path="/" element={<BookList />} />
-      <Route path="/categories" element={<BookForm />} />
+      <Route path="/" element={<HomePage />} />
+      <Route path="/categories" element={<CategoriesPage />} />
     </Routes>
   </BrowserRouter>
 );
