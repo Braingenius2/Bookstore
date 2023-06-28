@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = [];
 
@@ -12,7 +12,7 @@ const booksSlice = createSlice({
     },
     removeBook: (state, action) => {
       const bookId = action.payload;
-      return state.filter(book => book.Id !== bookId);
+      return state.filter((book) => book.Id !== bookId);
     },
   },
 });
