@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Book from './Book';
+import RemoveBookButton from './RemoveBookButton';
 
-const BookList = ({ books, onDelete }) => (
+const BookList = ({ books }) => (
   <div>
     {books.map((book) => (
-      <Book key={book.id} book={book} onDelete={onDelete} />
+      <div key={book.id}>
+        <Book book={book} />
+        <RemoveBookButton bookId={book.id} />
+      </div>
     ))}
   </div>
 );
@@ -18,7 +22,6 @@ BookList.propTypes = {
       author: PropTypes.string.isRequired,
     }),
   ).isRequired,
-  onDelete: PropTypes.func.isRequired,
 };
 
 export default BookList;
