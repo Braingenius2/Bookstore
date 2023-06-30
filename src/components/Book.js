@@ -1,11 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import RemoveBookButton from './RemoveBookButton';
 
-const Book = ({ book, onDelete }) => (
+const Book = ({ book }) => (
   <div>
-    <h2>{book.title}</h2>
-    <p>{book.author}</p>
-    <button type="button" onClick={() => onDelete(book.id)}>Delete</button>
+    <div className="book">
+      <p>category</p>
+      <h2>{book.title}</h2>
+      <p>{book.author}</p>
+    </div>
+    <ul className="actions">
+      <li>Comments</li>
+      <li><RemoveBookButton bookId={book.id} /></li>
+      <li>Edit</li>
+    </ul>
   </div>
 );
 
@@ -15,7 +23,6 @@ Book.propTypes = {
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
   }).isRequired,
-  onDelete: PropTypes.func.isRequired,
 };
 
 export default Book;
