@@ -11,7 +11,7 @@ const Book = ({ book }) => (
     </div>
     <ul className="actions">
       <li>Comments</li>
-      <li><RemoveBookButton bookId={book.id} /></li>
+      <li><RemoveBookButton bookItemId={book.item_id} /></li>
       <li>Edit</li>
     </ul>
   </div>
@@ -19,7 +19,7 @@ const Book = ({ book }) => (
 
 Book.propTypes = {
   book: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    item_id: PropTypes.string,
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
   }).isRequired,
